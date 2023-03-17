@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tópicos Especiais - 2023/1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="top">
+    <p>
+      Seja bem vindo(a)
+    </p>
+  </div>
+  <ion-list [inset]="true">
+    <ion-item fill="solid">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" ngModel email></ion-input>
+      <ion-note slot="error">E-mail invalido</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

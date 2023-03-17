@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Cadastre-se</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-list-header>Preencha todos os campos de formulário.</ion-list-header>
+
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Sobrenome</ion-label>
+      <ion-input [(ngModel)]= "sobrenome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime [(ngModel)]= "nascimento" presentation="date" id="datetime"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list-header color="success">Gênero</ion-list-header>
+  <ion-radio-group [(ngModel)]= "genero" value="genero">
+    <ion-item>
+      <ion-label>Feminino</ion-label>
+      <ion-radio slot="end" value="Feminino"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Masculino</ion-label>
+      <ion-radio slot="end" value="Masculino"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Não-binario</ion-label>
+      <ion-radio slot="end" value="naobinario"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-button (click) = "send()">Enviar</ion-button>
+  </ion-item>
+
+</ion-content>

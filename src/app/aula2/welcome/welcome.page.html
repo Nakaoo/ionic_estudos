@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+
+
+  <div id="div-footer">
+    <img id="dog" src="../../../assets/dog.jpg">
+    <ion-text class="ion-text-center" color="danger">
+      <h2> Dog muito louco</h2>
+    </ion-text>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="move('login')" expand="block" fill="outline">
+            Login
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="move('register')" expand="block" fill="outline">
+            register
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>
