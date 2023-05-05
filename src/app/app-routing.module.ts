@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'pessoa',
     pathMatch: 'full'
   },
   {
@@ -20,8 +20,20 @@ const routes: Routes = [
     loadChildren: () => import('./aula2/welcome/welcome.module').then( m => m.WelcomePageModule)
   },
   {
-    path: 'lista-pessoa',
+    path: 'pessoa',
     loadChildren: () => import('./aula3/lista-pessoa/lista-pessoa.module').then( m => m.ListaPessoaPageModule)
+  },
+  {
+    path: 'cadastro-pessoa',
+    loadChildren: () => import('./aula3/form-cadastro-pessoa/form-cadastro-pessoa.module').then( m => m.FormCadastroPessoaPageModule)
+  },
+  {
+    path: 'detalhe-pessoa',
+    loadChildren: () => import('./aula3/detalhe-pessoa/detalhe-pessoa.module').then( m => m.DetalhePessoaPageModule)
+  },
+  {
+    path: 'lista-produtos',
+    loadChildren: () => import('./aula4/lista-produtos/lista-produtos.module').then( m => m.ListaProdutosPageModule)
   },
 ];
 

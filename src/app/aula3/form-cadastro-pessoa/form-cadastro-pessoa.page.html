@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button />
+    </ion-buttons>
+
+    <ion-title>Cadastro de pacientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>Preencha todos os campos de formulário.</ion-list-header>
+
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Idade</ion-label>
+      <ion-input [(ngModel)]= "idade"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list-header color="success">Gênero</ion-list-header>
+  <ion-radio-group [(ngModel)]= "genero" value="genero">
+    <ion-item>
+      <ion-label>Feminino</ion-label>
+      <ion-radio slot="end" value="Feminino"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Masculino</ion-label>
+      <ion-radio slot="end" value="Masculino"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Não-binario</ion-label>
+      <ion-radio slot="end" value="naobinario"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-button (click) = "save()">Enviar</ion-button>
+  </ion-item>
+
+</ion-content>
