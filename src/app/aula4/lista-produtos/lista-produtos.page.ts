@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { HttpServiceService } from 'src/services/http-service.service';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -14,13 +14,16 @@ export class ListaProdutosPage {
   produtos: any[] = [];
 
   constructor(
-    private http: HttpClient
+    private http: HttpServiceService
   ) { }
 
   ionViewWillEnter() {
-    this.http.get(this.url).
-    subscribe((resp: any) => {
-      this.produtos = resp.product
+    const prod = {marca: 'Nescau', categoria: 'Achocolatado', preco: 14.8}
+
+    this.http.listaProdutos().subscribe(resp => {
+      this.produtos = resp;
     })
+
+    this.http.cadastraProduto(prod).subscribe(resp => console.log(resp))
   }
 }
